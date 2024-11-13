@@ -1,0 +1,71 @@
+.carrusel-productos-container {
+    padding: 0 40px !important; /* Espacio en los lados del carrusel */
+    background-color: #f8f9fa !important;
+    margin: 30px auto !important;
+    max-width: 100% !important;
+    overflow: hidden;
+}
+
+.section-title {
+    text-align: left !important;
+    font-size: 1.8rem !important;
+    font-weight: bold !important;
+    color: #333 !important;
+    padding: 0 15px !important;
+    margin-bottom: 10px !important;
+}
+
+/* Flechas de navegación */
+.slick-prev, .slick-next {
+    background-color: #52846C !important; /* Fondo negro */
+    font-size: 0.5rem !important; /* Tamaño más grande */
+    width: 50px !important; /* Aumenta el tamaño de la flecha */
+    height: 50px !important; /* Aumenta el tamaño de la flecha */
+    border-radius: 50% !important; /* Forma circular */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.slick-prev:hover, .slick-next:hover {
+    background-color: #87FAC3 !important; /* Más oscuro al pasar el cursor */
+}
+
+.slick-prev {
+    left: -20px !important; /* Espacio desde el borde izquierdo */
+}
+
+.slick-next {
+    right: -20px !important; /* Espacio desde el borde derecho */
+}
+
+
+/* Tarjeta de producto */
+.producto-card {
+    padding: 10px !important;
+    box-sizing: border-box !important;
+    text-align: center;
+}
+
+.card {
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+    background-color: #fff !important;
+    max-width: 180px;
+    margin: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Imagen del producto */
+.card-img-top-product {
+    width: 100% !important;
+    height: 180px !important;
+    object-fit: cover !important;
+    border-radius: 8px 8px 0 0 !important;
+}

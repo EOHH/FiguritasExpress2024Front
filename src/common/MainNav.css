@@ -1,0 +1,73 @@
+.navbar {
+  min-height: 80px;
+  font-size: 1em;
+  font-weight: bold;
+  background-color: #f0f0f0 !important;
+  display: flex;
+  align-items: stretch; /* Cambiado de 'center' a 'stretch' */
+  justify-content: center;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  height: 80px; /* Asegura que el contenedor de la marca tenga la misma altura */
+}
+
+.navbar-logo {
+  margin-right: 10px;
+}
+
+.navbar-toggler {
+  border-color: white;
+}
+
+.navbar-toggler-icon {
+  background-color: white;
+}
+
+.navbar-nav {
+  height: 100%; /* Añadido para hacer que los elementos de navegación ocupen todo el alto */
+  display: flex;
+  align-items: center;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: black;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  height: 100%; /* Añadido para hacer que los enlaces ocupen todo el alto */
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: black;
+}
+
+.nav-link.active {
+  background-color: #87FAC3;
+  color: white;
+  display: flex;
+  align-items: center;
+  height: 70px; 
+  padding: 0;
+}
+
+.navbar-collapse.show {
+  background-color: white;
+}
+
+.navbar-collapse.show .nav-link {
+  color: black;
+}
+
+.navbar-collapse.show .navbar-toggler-icon {
+  background-color: black;
+}

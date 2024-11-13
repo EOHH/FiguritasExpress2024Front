@@ -1,0 +1,8 @@
+.card {
+    max-width: 200px !important;
+}
+
+.card-img-top-product {
+    width: auto !important;
+    height: auto !important;
+}

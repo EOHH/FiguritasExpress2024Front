@@ -1,0 +1,62 @@
+.previa-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+.section {
+    margin-bottom: 50px;
+}
+.section1 {
+    margin-bottom: 50px;
+}
+
+.section h2{
+    font-size: 2em;
+}
+.section1 h2{
+    font-size: 2em;
+}
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los productos se envuelvan en filas */
+    justify-content: center; /* Centrar los productos horizontalmente */
+    gap: 30px;
+}
+
+.product {
+    text-align: center;
+    width: 250px; /* Ancho fijo para cada producto */
+    margin: 10px; /* Espacio entre productos */
+    border-radius: 5px;
+    overflow: hidden; /* Para que las imágenes no sobresalgan */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agregando sombra para resaltar */
+}
+
+.product img {
+    width: 100%;
+    height: 300px; /* Tamaño fijo para las imágenes */
+    object-fit: cover; /* Para que las imágenes mantengan su relación de aspecto */
+    border-radius: 5px 5px 0 0; /* Esquina superior redondeada */
+}
+
+.product p {
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
+button {
+    background-color: #52846C;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 0 0 5px 5px; /* Esquina inferior redondeada */
+    cursor: pointer;
+    width: 100%; /* Botones con ancho completo */
+}
+
+button:hover {
+    background-color: #87FAC3;
+}

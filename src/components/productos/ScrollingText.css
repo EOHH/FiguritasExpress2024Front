@@ -1,0 +1,35 @@
+.sectionScro {
+    background-color: #87FAC3; /* Color de fondo */
+    color: #ffeb3b; /* Color del texto */
+    overflow: hidden; /* Oculta el desbordamiento */
+    padding: 20px 0; /* Espaciado vertical */
+    position: relative; /* Para el posicionamiento del texto */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.scrolling-text {
+    white-space: nowrap; /* Evita que el texto se divida */
+    animation: scroll 20s linear infinite; /* Animación de desplazamiento */
+}
+
+.scrolling-text__wrapper {
+    display: inline-block; /* Permite que el texto se desplace */
+}
+
+.scrolling-text__text {
+    font-size: 1.5rem; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    margin-right: 50px; /* Espaciado entre repeticiones */
+    display: inline-block; /* Permite el espaciado horizontal */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra del texto */
+}
+
+/* Animación de desplazamiento */
+@keyframes scroll {
+    0% {
+        transform: translateX(100%); /* Comienza fuera de la pantalla */
+    }
+    100% {
+        transform: translateX(-100%); /* Termina fuera de la pantalla */
+    }
+}

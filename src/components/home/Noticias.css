@@ -1,0 +1,89 @@
+/* Estilos generales para el área de noticias */
+#noticias {
+  padding: 30px 0;
+  background-color: #f8f8f8;
+}
+
+/* Estilos para el contenedor de noticias */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Estilos para el título de noticias */
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+  text-transform: uppercase; 
+  font-weight: bold;
+}
+
+/* Estilos para cada artículo de noticia */
+.col {
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* Espaciado entre las noticias */
+.col:not(:last-child) {
+  margin-right: 20px; /* Ajusta según sea necesario */
+}
+
+/* Efecto de escala al pasar el ratón sobre una noticia */
+.col:hover {
+  transform: scale(1.05);
+}
+
+/* Estilos para la imagen de la noticia */
+img {
+  width: 100%;
+  max-height: 300px; 
+  border-radius: 8px;
+}
+
+/* Estilos para el contenido de la noticia */
+article > div {
+  padding: 20px;
+  background-color: #fff;
+}
+
+/* Estilos para el título de la noticia */
+h3 {
+  color: #1870c2;
+  margin-bottom: 15px;
+  text-transform: uppercase; 
+}
+
+/* Estilos para el texto de la noticia */
+p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+  .col {
+    margin-right: 0;
+  }
+  .row {
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  .col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+.title_plantillas_clientes{
+  font-size: 14pt;
+  font-weight: bold;
+  display: inline;
+}

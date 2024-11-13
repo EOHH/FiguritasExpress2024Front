@@ -1,0 +1,336 @@
+:root {
+  --color1: #87FAC3;
+  --color2: #87FAC3;
+  --color3: #E3A410;
+  --color4: #65FA05;
+  --color5: #00EBF0;
+  --color6: #52846C;
+  --color-blanco: #FFFFFF;
+  --color-negro: #000000;
+  --color-gris-claro: #CCCCCC;
+  --color-gris-oscuro: #070000;
+}
+
+body {
+  font-family: 'Oxanium', sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 60px;
+  letter-spacing: -2px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 2em;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+h5 {
+  color: #87FAC3;
+}
+
+.card-body {
+  background-color: var(--color-blanco);
+}
+
+.card-text {
+  color: rgb(0, 0, 0);
+}
+
+.card-title {
+  color: rgb(0, 0, 0);
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#page-header {
+  background-color: var(--color-gris-claro);
+  padding: 15px 0;
+}
+
+.padded {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.list-group-item.active {
+  background-color: var(--color2);
+  border-color: var(--color2);
+}
+
+@media (min-width: 1680px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1600px;
+  }
+}
+
+.carousel-indicators [data-bs-target] {
+  height: 30px;
+  border-radius: 50%;
+}
+
+.botonEliminar {
+  cursor: pointer;
+}
+
+.botonEliminar:hover {
+  color: var(--color2);
+}
+
+.cantidad-carrito {
+  width: 100px;
+  display: inline-block;
+}
+
+.container-half-width {
+  width: 50%;
+}
+
+.container-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #999;
+  margin: -4px 0 0 -4px;
+}
+
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.recolor {
+  background-color: #52846C !important; /* Asegura que el color de fondo se aplique */
+  color: white !important; /* Asegura que el color del texto se aplique */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.recolor:hover {
+  background-color: #87FAC3 !important; /* Color de fondo del botón al pasar el cursor */
+  color: white !important; /* Color del texto del botón al pasar el cursor */
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border: 0.2em solid #87FAC3; /* Color del borde inicial */
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333333;
+  transition: border-color 0.3s; /* Transición para un efecto suave al cambiar de color */
+  appearance: none; /* Para ocultar la flecha predeterminada en algunos navegadores */
+}
+
+/* Cambia el color del borde cuando el campo esté en foco */
+.form-control:focus {
+  border-color: #52846C; /* Color del borde cuando el campo está enfocado */
+  outline: none; /* Elimina el borde de enfoque predeterminado del navegador */
+}
+
+/* Estilos Productos */
+/* Estilos Generales */
+.producto-card{
+  margin: 3px;
+}
+.card {
+  padding:10px;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  background-color: #fff !important;
+}
+
+.card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.card-img-top-product {
+  width: 100% !important;
+  object-fit: cover !important;
+  max-height: 250px !important;
+}
+
+.card-body {
+  padding: 10px !important;
+  text-align: left !important;
+}
+
+.card-title {
+  font-size: 1rem !important;
+  font-weight: bold !important;
+  color: #333 !important;
+  margin-bottom: 5px !important;
+}
+
+.card-text {
+  font-size: 0.9rem !important;
+  color: #666 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.btnCarrito {
+  cursor: pointer !important;
+  color: #4caf50 !important;
+  margin-left: 5px !important;
+}
+
+.btnCarrito:hover {
+  color: #388e3c !important;
+}
+
+.image-content {
+  position: relative !important;
+}
+
+.vista-rapida {
+  position: absolute !important;
+  top: calc(50% - 17px) !important;
+  left: calc(50% - 18px) !important;
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  color: var(--color-blanco) !important;
+  padding: 5px 10px !important;
+  cursor: pointer !important;
+  border-radius: 50% !important;
+  opacity: 0 !important;
+  transition: all 0.5s ease-in-out !important;
+}
+
+.vista-rapida:hover {
+  opacity: 1 !important;
+}
+
+.porcentaje-descuento {
+  background-color: var(--color1) !important;
+  color: var(--color-blanco) !important;
+  position: absolute !important;
+  right: 0 !important;
+  padding: 5px 10px !important;
+  border-radius: 0 0 0 10px !important;
+  top: 0 !important;
+}
+
+.precio-lista {
+  color: var(--color-gris-claro) !important;
+  text-decoration: line-through !important;
+  margin-left: 15px !important;
+}

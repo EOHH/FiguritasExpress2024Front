@@ -1,0 +1,48 @@
+.carousel-item img {
+  max-height: 550px; 
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5); 
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.carousel-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.carousel-description {
+  font-size: 1rem;
+}
+
+.carousel-caption .carousel-title,
+.carousel-caption .carousel-description {
+  color: white; /* Cambiar el color del texto a blanco */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  color: white; /* Cambiar el color de los iconos de control a blanco */
+}
+
+@media (max-width: 768px) {
+  .carousel-title {
+    font-size: 1.2rem;
+  }
+
+  .carousel-description {
+    font-size: 0.9rem;
+  }
+
+  .carousel-caption {
+    padding: 5px; /* Reducir el relleno en dispositivos móviles */
+    border-radius: 3px; /* Ajustar el radio de borde en dispositivos móviles */
+  }
+}
+.carousel-item img {
+  max-height: 550px; 
+  width: 100%; /* Ajustar el ancho de la imagen al 100% para que todas tengan el mismo tamaño */
+  object-fit: cover; /* Ajustar la imagen para cubrir todo el contenedor manteniendo la relación de aspecto */
+}

@@ -1,0 +1,113 @@
+/* Estilos generales del pie de página */
+#main-footer {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+#main-footer img.logo {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+#main-footer h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+#main-footer h5 {
+  color: #87FAC3 !important;
+}
+
+#main-footer p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Estilos para la sección de redes sociales */
+#main-footer .btn-outline-light {
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
+}
+
+/* Estilos para las columnas de información */
+#main-footer .col-md-4.text-left,
+#main-footer .col-md-4 form {
+  text-align: left !important;
+}
+
+#main-footer .col-md-4 h5 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+#main-footer .col-md-4 p {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+/* Estilos para los enlaces y redes sociales */
+#main-footer a {
+  color: #cccccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+#main-footer a:hover {
+  color: #ffffff;
+}
+
+/* Estilos para el formulario de suscripción */
+#main-footer form {
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+#main-footer .form-group {
+  margin-bottom: 15px;
+}
+
+#main-footer input {
+  width: 100%;
+  padding: 8px;
+  font-size: 0.9rem;
+}
+
+#main-footer button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+#main-footer button.btn-primary {
+  background-color: #87FAC3;
+  border-color: #87FAC3;
+}
+
+#main-footer button.btn-primary:hover {
+  background-color: #52846C;
+  border-color: #52846C;
+}
+
+/* Estilos para la segunda sección del pie de página */
+#main-footer .second-section {
+  background: #111111;
+  color: #ffffff;
+  padding: 15px;
+}
+
+#main-footer .second-section p {
+  font-size: 0.9rem;
+}
+
+#main-footer .second-section a {
+  color: #4285f4;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+#main-footer .second-section a:hover {
+  color: #ffffff;
+}

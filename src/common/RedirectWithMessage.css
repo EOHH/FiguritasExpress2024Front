@@ -1,0 +1,113 @@
+.register-message-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  text-align: center;
+  background-color: #f9f9f9;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://i.ebayimg.com/thumbs/images/g/vjgAAOSwxOReELIQ/s-l1200.jpg'); /* Usa una URL de imagen aquí */
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(0.2) blur(2px);
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.content-mesagge-redirect {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.lock-icon {
+  color: #87FAC3;
+  margin-bottom: 1rem;
+}
+
+.message-title {
+  font-size: 2.5rem !important;
+  margin-bottom: 1rem !important;
+  color: #ffffff !important;
+}
+
+
+.message-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #eee;
+}
+
+.mbr-section-btn .register-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.8rem;
+  background-color: #87FAC3;
+  color: #260a30;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.mbr-section-btn .register-btn:hover {
+  background-color: #52846C;
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  margin-right: 0.5rem;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .content-mesagge-redirect {
+    padding: 1.5rem;
+  }
+  .message-title {
+    font-size: 2rem;
+  }
+  .message-text {
+    font-size: 1rem;
+  }
+}

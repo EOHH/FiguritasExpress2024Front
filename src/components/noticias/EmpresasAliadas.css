@@ -1,0 +1,31 @@
+/* Estilos para el área de empresas aliadas */
+.area_plantillas {
+    padding: 30px 0;
+    background-color: #f9f9f9;
+  }
+  
+  /* Estilo para el título de empresas aliadas */
+  .title_lps_slider {
+    color: #333;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  /* Estilos para los enlaces de empresas aliadas */
+  .title_plantillas_clientes {
+    font-size: 14pt;
+    font-weight: bold;
+    display: inline;
+  }
+  
+  /* Estilos para las imágenes de las empresas aliadas */
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Espaciado entre empresas aliadas */
+  .row {
+    margin-bottom: 20px;
+  }
+  

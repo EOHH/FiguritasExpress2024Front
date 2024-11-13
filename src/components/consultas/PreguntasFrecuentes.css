@@ -1,0 +1,57 @@
+.list1 {
+    position: relative;
+  }
+  
+  .mbr-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  
+  .panel-group {
+    border: none;
+  }
+  
+  .card-header {
+    padding: 0rem;
+  }
+  
+  .panel-body {
+    padding: 0rem;
+    padding-bottom: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .panel-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .panel-title-edit {
+    color: #000000;
+  }
+  
+  .card .card-header {
+    background-color: transparent;
+    margin-bottom: 0;
+    border: 0;
+    border-radius: 2px;
+  }
+  
+  .sign {
+    font-size: 1.2rem !important;
+    font-family: 'Moririse2' !important;
+    color: white;
+    transition: all 0.3s;
+    transform: rotate(180deg);
+    padding-left: 0.5rem;
+  }
+  
+  .collapsed .sign {
+    transform: rotate(0deg);
+  }
+  
