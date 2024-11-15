@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { FaEdit, FaTrashAlt, FaPlus } from 'react-icons/fa';  // Importamos los iconos
 import Modal from './Modal';
 import { fetchData, handleCreate, handleDelete, handleUpdate } from './crudFunctions';
+import './ProductManagement.css';  // Importar el archivo de estilos
 
 const ProductManagement = () => {
   const [products, setProducts] = useState([]);
@@ -13,9 +15,9 @@ const ProductManagement = () => {
   }, []);
 
   return (
-    <div>
+    <div className="padded">
       <h2>Crear Producto</h2>
-      <form onSubmit={(e) => handleCreate(e, 'productos', newProduct, setNewProduct, () => fetchData('productos', setProducts))}>
+      <form className="product-form" onSubmit={(e) => handleCreate(e, 'productos', newProduct, setNewProduct, () => fetchData('productos', setProducts))}>
         <input
           type="text"
           placeholder="Nombre"
@@ -34,11 +36,11 @@ const ProductManagement = () => {
           value={newProduct.condicion}
           onChange={(e) => setNewProduct({ ...newProduct, condicion: e.target.value })}
         />
-        <button type="submit">Crear Producto</button>
+        <button type="submit" className="add-btn"><FaPlus /> Crear Producto</button>
       </form>
 
       <h2>Productos</h2>
-      <table>
+      <table className="product-table">
         <thead>
           <tr>
             <th>ID</th>
@@ -55,9 +57,9 @@ const ProductManagement = () => {
               <td>{product.nombre}</td>
               <td>${product.precio.toFixed(2)}</td>
               <td>{product.condicion}</td>
-              <td>
-                <button onClick={() => { setEditItem(product); setIsEditModalOpen(true); }}>Editar</button>
-                <button onClick={() => handleDelete(product.idProducto, 'productos', () => fetchData('productos', setProducts))}>Eliminar</button>
+              <td className="action-buttons">
+                <button className="action-btn edit-btn" onClick={() => { setEditItem(product); setIsEditModalOpen(true); }}><FaEdit /></button>
+                <button className="action-btn delete-btn" onClick={() => handleDelete(product.idProducto, 'productos', () => fetchData('productos', setProducts))}><FaTrashAlt /></button>
               </td>
             </tr>
           ))}

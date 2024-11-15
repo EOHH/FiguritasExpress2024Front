@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
 import { fetchData, handleCreate, handleDelete, handleUpdate } from './crudFunctions';
+import { FaPen, FaTrashAlt } from 'react-icons/fa';  // Iconos para editar y eliminar
+import './UserManagement.css';
 
 const UserManagement = () => {
   const [users, setUsers] = useState([]);
@@ -9,13 +11,16 @@ const UserManagement = () => {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
   useEffect(() => {
-    fetchData('users', setUsers);
+    fetchData('users', setUsers);  // Cargar usuarios al inicio
   }, []);
 
   return (
-    <div>
+    <div className="padded">
       <h2>Crear Usuario</h2>
-      <form onSubmit={(e) => handleCreate(e, 'users', newUser, setNewUser, () => fetchData('users', setUsers))}>
+      <form
+        className="user-form"
+        onSubmit={(e) => handleCreate(e, 'users', newUser, setNewUser, () => fetchData('users', setUsers))}
+      >
         <input
           type="text"
           placeholder="Username"
@@ -38,7 +43,7 @@ const UserManagement = () => {
       </form>
 
       <h2>Usuarios</h2>
-      <table>
+      <table className="user-table">
         <thead>
           <tr>
             <th>ID</th>
@@ -53,9 +58,19 @@ const UserManagement = () => {
               <td>{user.id}</td>
               <td>{user.username}</td>
               <td>{user.email}</td>
-              <td>
-                <button onClick={() => { setEditItem(user); setIsEditModalOpen(true); }}>Editar</button>
-                <button onClick={() => handleDelete(user.id, 'users', () => fetchData('users', setUsers))}>Eliminar</button>
+              <td className="action-buttons">
+                <button
+                  className="action-btn edit-btn"
+                  onClick={() => { setEditItem(user); setIsEditModalOpen(true); }}
+                >
+                  <FaPen />
+                </button>
+                <button
+                  className="action-btn delete-btn"
+                  onClick={() => handleDelete(user.id, 'users', () => fetchData('users', setUsers))}
+                >
+                  <FaTrashAlt />
+                </button>
               </td>
             </tr>
           ))}

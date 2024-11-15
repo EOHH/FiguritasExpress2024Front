@@ -1,64 +1,75 @@
+/* Estilos para la tabla de pedidos */
 .order-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
-  
-  .order-table th, .order-table td {
-    text-align: left;
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .order-table th {
-    background-color: #87FAC3;
-    color: white;
-  }
-  
-  .status {
-    padding: 5px 10px;
-    border-radius: 3px;
-    font-weight: bold;
-    color: white;
-  }
-  
-  .status.pending {
-    background-color: #f39c12;
-  }
-  
-  .status.paid {
-    background-color: #2ecc71;
-  }
-  
-  .action-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px 10px;
-    margin-right: 5px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    color: white;
-    font-size: 14px;
-  }
-  
-  .pay-btn {
-    background-color: #2ecc71;
-  }
-  
-  .send-btn {
-    background-color: #3498db;
-  }
-  
-  .delete-btn {
-    background-color: #e74c3c;
-  }
-  
-  .action-btn:hover {
-    opacity: 0.8;
-  }
-  
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.order-table th, .order-table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.order-table th {
+  background-color: #87FAC3;
+  color: white;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-weight: bold;
+  color: white;
+}
+
+.status.pending {
+  background-color: #f39c12;
+}
+
+.status.paid {
+  background-color: #2ecc71;
+}
+
+.status.delivered {
+  background-color: #79cae7;
+}
+
+/* Estilos para los botones de acción en la tabla */
+.action-buttons {
+  display: flex;
+  justify-content: space-evenly;  /* Usamos space-evenly para separar los botones uniformemente */
+  align-items: center;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+}
+
+.details-btn {
+  background-color: #2ecc71;
+}
+
+.send-btn {
+  background-color: #3498db;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+}
+
+.action-btn:hover {
+  opacity: 0.8;
+}
+

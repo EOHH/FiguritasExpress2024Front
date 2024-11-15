@@ -1,13 +1,14 @@
 import React from 'react';
+import { FaTachometerAlt, FaUser, FaBox, FaClipboardList } from 'react-icons/fa'; // Iconos de react-icons
 
 const Sidebar = ({ setActiveTab }) => (
   <aside className="sidebar">
     <nav>
       <ul>
-        <li onClick={() => setActiveTab('dashboard')}>Dashboard</li>
-        <li onClick={() => setActiveTab('users')}>Usuarios</li>
-        <li onClick={() => setActiveTab('products')}>Productos</li>
-        <li onClick={() => setActiveTab('orders')}>Pedidos</li>
+        <li onClick={() => setActiveTab('dashboard')}><FaTachometerAlt /> Dashboard</li>
+        <li onClick={() => setActiveTab('users')}><FaUser /> Usuarios</li>
+        <li onClick={() => setActiveTab('products')}><FaBox /> Productos</li>
+        <li onClick={() => setActiveTab('orders')}><FaClipboardList /> Pedidos</li>
       </ul>
     </nav>
   </aside>

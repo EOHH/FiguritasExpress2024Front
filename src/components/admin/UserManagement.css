@@ -1,0 +1,193 @@
+/* Estilos generales para la tabla de usuarios */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.user-table th, .user-table td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-table th {
+    background-color: #87FAC3;
+    color: white;
+}
+
+.user-table td {
+    font-size: 14px;
+}
+
+/* Estilos para el formulario de creación de usuario */
+.user-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+.user-form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+.user-form input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Estilos para el botón de crear usuario */
+.user-form button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.user-form button:hover {
+    background-color: #2980b9;
+}
+
+/* Estilos generales para los botones */
+.action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 12px;
+    margin-right: 12px; /* Separar un poco más los botones */
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    color: #555;
+}
+
+/* Hover en los botones */
+.action-btn:hover {
+    transform: scale(1.1);
+    background-color: #ecf0f1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón de editar (icono naranja) */
+.edit-btn {
+    background-color: #f39c12;
+}
+
+.edit-btn:hover {
+    background-color: #e67e22;
+    color: white;
+}
+
+/* Botón de eliminar (icono rojo) */
+.delete-btn {
+    background-color: #e74c3c;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+    color: white;
+}
+
+/* Botón con icono de agregar usuario (icono verde) */
+.add-btn {
+    background-color: #2ecc71;
+}
+
+.add-btn:hover {
+    background-color: #27ae60;
+    color: white;
+}
+
+/* Contenedor de los botones en cada fila (hacerlos espaciados) */
+.action-buttons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Estilos adicionales para los iconos */
+.action-btn i {
+    font-size: 18px; /* Asegúrate de que el tamaño de los iconos sea adecuado */
+}
+
+/* Estilos para el modal de edición */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 50%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.modal .modal-content {
+    margin-bottom: 20px;
+}
+
+.modal input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 100%;
+    font-size: 14px;
+}
+
+.modal .modal-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal .modal-buttons button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    border-radius: 5px;
+}
+
+.modal .modal-buttons button:hover {
+    background-color: #2980b9;
+}
+
+.modal .modal-buttons button:nth-child(1) {
+    background-color: #e74c3c;
+}
+
+.modal .modal-buttons button:nth-child(1):hover {
+    background-color: #c0392b;
+}
