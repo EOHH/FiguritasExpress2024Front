@@ -80,7 +80,7 @@ const OrderManagement = () => {
                 )}
               </td>
               <td>{order.direccion}</td>
-              <td>${order.producto && order.producto.precio}</td>
+              <td>S/{order.producto && order.producto.precio}</td>
               <td>
                 <span className={`status ${order.estadoEnvio === 'Pendiente de envío' ? 'pending' : 'delivered'}`}>
                   {order.estadoEnvio}

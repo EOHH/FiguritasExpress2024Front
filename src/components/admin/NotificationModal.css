@@ -1,0 +1,87 @@
+/* Estilo para el modal */
+.notification-modal {
+  position: fixed;
+  top: 200px;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  overflow-y: auto;
+  border-left: 1px solid #ddd;
+}
+
+/* Contenido del modal */
+.modal-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Título del modal */
+.modal-content h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Lista de notificaciones */
+.notification-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1; /* Para que la lista ocupe el espacio restante */
+  overflow-y: auto;
+}
+
+/* Cada notificación */
+.notification-item {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Ícono de eliminar notificación */
+.notification-item svg {
+  color: #d9534f;
+  transition: color 0.2s ease;
+}
+
+.notification-item svg:hover {
+  color: #c9302c;
+}
+
+/* Botón de cerrar */
+.close-button {
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: center;
+  transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+  background-color: #0056b3;
+}
+
+/* Mensaje cuando no hay notificaciones */
+.notification-modal p {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-top: 20px;
+}

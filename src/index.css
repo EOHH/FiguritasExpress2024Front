@@ -290,12 +290,12 @@ h5 {
 
 .btnCarrito {
   cursor: pointer !important;
-  color: #4caf50 !important;
+  color: #52846C !important;
   margin-left: 5px !important;
 }
 
 .btnCarrito:hover {
-  color: #388e3c !important;
+  color: #87FAC3 !important;
 }
 
 .image-content {

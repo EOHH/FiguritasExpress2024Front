@@ -1,123 +1,232 @@
-/* Carrito.css */
-
 /* Contenedor principal */
-
 .checkout-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    font-family: 'Arial', sans-serif;
-  }
-  
-  /* Sección del carrito */
-  .cart-section {
-    flex: 2;
-    transition: all 0.3s ease;
-  }
-  
-  .cart-section.shrink {
-    flex: 1; /* Reducir el espacio cuando el formulario de pago está activo */
-  }
-  
-  .cart-title {
-    text-align: center;
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .cart-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  
-  .cart-table th,
-  .cart-table td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .cart-product {
-    display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  height: auto; /* Auto-adjust height */
+  min-height: 600px; /* Minimum height to prevent initial collapse */
+}
+
+/* Sección del carrito */
+.cart-section {
+  flex: 2;
+  min-width: 300px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  max-height: 600px; /* Optional: limit max height */
+  overflow-y: auto; /* Enable scrolling if content exceeds max-height */
+}
+
+/* Título del carrito */
+.cart-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Tabla del carrito */
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  border-radius: 12px; /* Bordes redondeados */
+  overflow: hidden; /* Esconde bordes internos */
+}
+
+.cart-table th {
+  background-color: #52846C; /* Color verde */
+  color: white;
+  padding: 15px;
+  text-align: left;
+  border-bottom: 2px solid #87FAC3; /* Línea de contraste */
+}
+
+.cart-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Producto en la tabla */
+.cart-product {
+  display: flex;
+  align-items: center;
+}
+
+.cart-product-image {
+  width: auto;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 8px;
+}
+
+/* Entrada de cantidad */
+.quantity-input {
+  width: 60px;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Botón para eliminar item */
+.remove-item {
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.remove-item:hover {
+  background-color: #e60000;
+}
+
+/* Total del carrito */
+.cart-total {
+  text-align: right;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Métodos de pago */
+.payment-methods {
+  display: flex;
+  justify-content: center; /* Centra los botones horizontalmente */
+  gap: 10px; /* Espacio entre los botones */
+  flex-wrap: wrap; /* Permite que los botones bajen a una nueva línea si es necesario */
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  padding: 10px 0;
+}
+
+.btn-proceed {
+  background-color: #52846C;
+  color: white;
+  border: none;
+  padding: 10px 20px; /* Ajusta el padding */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  flex: 1 1 calc(33.33% - 20px); /* Ocupa un tercio del ancho con espacio */
+  max-width: 200px; /* Ancho máximo de cada botón */
+  text-align: center;
+}
+
+.btn-proceed:hover {
+  background-color: #3e6c53;
+}
+
+/* Detalles de pago */
+.payment-details {
+  flex: 1;
+  min-width: 300px;
+  margin-left: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Fondo degradado */
+.carrito-vista-degradado {
+  position: relative;
+  display: flex;
+  flex-direction: column;  /* Asegura que los elementos se apilen verticalmente */
+  align-items: center;
+  justify-content: flex-start; /* Alineación en el inicio, puedes cambiar a center si lo prefieres */
+  background-color: #beffe0;
+  background-size: cover;
+  padding: 20px;
+  min-height: 100vh; /* Mantiene al menos el tamaño de la ventana */
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  box-sizing: border-box; /* Incluye el padding dentro del ancho y alto */
+}
+
+.overlay-degradado {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2); /* Mayor opacidad para contraste */
+  z-index: 0;
+}
+
+.cart-welcome {
+  text-align: center;
+  font-size: 18px;
+  color: #444;
+  background-color: rgba(240, 240, 240, 0.9);
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cart-process {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0;
+  padding: 10px 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 150px;
+}
+
+.process-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.process-step p {
+  font-size: 14px;
+  color: #333;
+  margin: 5px 0 0;
+}
+
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .checkout-container {
+    flex-direction: column;
     align-items: center;
   }
-  
-  .cart-product-image {
-    width: auto;
-    height: 150px;
-    object-fit: cover;
-    margin-right: 15px;
-    border-radius: 5px;
-  }
-  
-  .quantity-input {
-    width: 60px;
-    padding: 5px;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .remove-item {
-    background-color: #ff4d4d;
-    color: #fff;
-    border: none;
-    padding: 8px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .remove-item:hover {
-    background-color: #e60000;
-  }
-  
-  .cart-total {
-    text-align: right;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .payment-methods {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-  }
-  
-  /* Detalles de pago */
+
   .payment-details {
-    flex: 1;
-    margin-left: 20px; /* Espacio entre el carrito y el formulario de pago */
-    transition: all 0.3s ease;
+    margin-left: 0;
   }
-  
-  .carrito-vista-degradado {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-image: url('https://i.pinimg.com/736x/3f/15/00/3f150078eb66bd27872c62a10b62d036.jpg'); 
-    overflow: hidden;
-    padding: 20px;
+
+  .cart-total {
+    text-align: center;
   }
-  
-  /* Overlay opcional para ajustar la opacidad del fondo */
-  .overlay-degradado {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.1); /* Ajusta la opacidad si es necesario */
-    z-index: 0;
+
+  .btn-proceed {
+    flex: 1 1 100%; /* Los botones ocupan el 100% del ancho en pantallas pequeñas */
+    max-width: none; /* Elimina la restricción de ancho máximo */
+    margin-bottom: 10px; /* Espacio inferior entre los botones */
   }
+}
+

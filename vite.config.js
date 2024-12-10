@@ -9,4 +9,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'), // Asegúrate de que apunta a la carpeta 'src'
     },
   },
+  define: {
+    global: 'window', // Define global como window
+  },
 });

@@ -4,6 +4,7 @@ import MainFooter from './common/MainFooter';
 import MainHeader from './common/MainHeader';
 import MainNav from './common/MainNav';
 import Inicio from './components/home/Inicio';
+import UserProfile from './common/UserProfile';
 import Tiendita from './components/productos/Tiendita';
 import Tienda from './components/productos/Tienda';
 import Carrito from './components/home/Carrito';
@@ -84,6 +85,7 @@ function App() {
         <Route path='/tiendita' element={isAuthenticated ? <Tiendita /> : <RedirectWithMessage />} />
         <Route path='/noticias' element={<NoticiasPage />} />
         <Route path='/nosotros' element={<Nosotros />} />
+        <Route path="/perfil" element={<UserProfile />} />
         
         {/* Ruta del carrito protegida */}
         <Route 

@@ -16,6 +16,13 @@ function MainBanner() {
       </div>
       <div className="carousel-inner">
         <div className="carousel-item active">
+          <img src={banner1} className="d-block w-100" alt="Yu-Gi-Oh!" />
+          <div className="carousel-caption d-none d-md-block">
+            <h5 className="carousel-title">Es Hora del Duelo</h5>
+            <p className="carousel-description">Colecciona las mejores figuritas de Yu-Gi-Oh! y domina el campo de batalla.</p>
+          </div>
+        </div>
+        <div className="carousel-item">
           <img src={banner2} className="d-block w-100" alt="Pokemon" />
           <div className="carousel-caption d-none d-md-block">
             <h5 className="carousel-title">¡Atrápalos a Todos!</h5>
@@ -27,13 +34,6 @@ function MainBanner() {
           <div className="carousel-caption d-none d-md-block">
             <h5 className="carousel-title">Poder Saiyajin</h5>
             <p className="carousel-description">Encuentra las figuritas de Dragon Ball con tus personajes favoritos y revive sus épicas batallas.</p>
-          </div>
-        </div>
-        <div className="carousel-item">
-          <img src={banner1} className="d-block w-100" alt="Yu-Gi-Oh!" />
-          <div className="carousel-caption d-none d-md-block">
-            <h5 className="carousel-title">Es Hora del Duelo</h5>
-            <p className="carousel-description">Colecciona las mejores figuritas de Yu-Gi-Oh! y domina el campo de batalla.</p>
           </div>
         </div>
       </div>

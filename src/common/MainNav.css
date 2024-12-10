@@ -1,17 +1,22 @@
 .navbar {
+  position: sticky; /* Se queda justo debajo del encabezado */
+  top: 3.5rem; /* Ajusta este valor según la altura del `toluca-header` */
   min-height: 80px;
   font-size: 1em;
   font-weight: bold;
-  background-color: #f0f0f0 !important;
   display: flex;
-  align-items: stretch; /* Cambiado de 'center' a 'stretch' */
+  align-items: stretch;
   justify-content: center;
+  width: 100%; /* Ocupa todo el ancho */
+  z-index: 1050; /* Asegúrate de que esté encima del resto */
+  background-color: white; /* Evita superposición visual con el fondo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega un sombreado sutil */
 }
 
 .navbar-brand {
   display: flex;
   align-items: center;
-  height: 80px; /* Asegura que el contenedor de la marca tenga la misma altura */
+  height: 80px;
 }
 
 .navbar-logo {
@@ -27,23 +32,24 @@
 }
 
 .navbar-nav {
-  height: 100%; /* Añadido para hacer que los elementos de navegación ocupen todo el alto */
-  display: flex;
-  align-items: center;
-}
-
-.nav-item {
+  height: 100%;
   display: flex;
   align-items: center;
 }
 
 .nav-link {
   color: black;
-  transition: color 0.3s;
+  transition: color 0.3s, background-color 0.3s;
   display: flex;
   align-items: center;
+  justify-content: center; /* Asegura que el contenido esté centrado */
   padding: 0 15px;
-  height: 100%; /* Añadido para hacer que los enlaces ocupen todo el alto */
+  height: 100%; /* Altura consistente */
+  line-height: normal; /* Para evitar problemas de alineación */
+}
+
+.nav-link i {
+  margin-right: 8px;
 }
 
 .nav-link:hover,
@@ -54,10 +60,12 @@
 .nav-link.active {
   background-color: #87FAC3;
   color: white;
-  display: flex;
-  align-items: center;
-  height: 70px; 
-  padding: 0;
+  height: 70px;
+}
+
+.profile-img {
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .navbar-collapse.show {

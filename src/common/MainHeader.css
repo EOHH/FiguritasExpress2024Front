@@ -7,10 +7,11 @@
   background: linear-gradient(to right, #52846C, #87FAC3) !important;
   color: white !important;
   position: sticky !important;
-  top: 0 !important;
-  z-index: 1000 !important;
+  top: 0 !important; /* Siempre en la parte superior */
+  z-index: 1000 !important; /* Asegúrate de que esté detrás de la navbar */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
-  }
+  width: 100%; /* Ocupa todo el ancho */
+}
   
   .header-content {
   display: flex !important;

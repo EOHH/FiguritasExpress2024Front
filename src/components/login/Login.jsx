@@ -19,26 +19,36 @@ function Login({ onLogin }) {
   };
 
   const iniciarSesion = async (event) => {
-    event.preventDefault();
-
+    event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+  
     try {
+      // Preparar los datos de inicio de sesión y el endpoint dinámico
       const loginData = { email, password };
-      const endpoint = userType === "admin"
-        ? "http://localhost:8080/api_int_2024/auth/login/admin"
-        : "http://localhost:8080/api_int_2024/auth/login/user";
-
+      const endpoint =
+        userType === "admin"
+          ? "http://localhost:8080/api_int_2024/auth/login/admin"
+          : "http://localhost:8080/api_int_2024/auth/login/user";
+  
+      // Realizar la solicitud al backend
       const response = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(loginData),
       });
-
-      if (!response.ok) throw new Error("Error de red");
-
+  
+      // Validar si la respuesta fue exitosa
+      if (!response.ok) {
+        const errorText = await response.text(); // Obtener texto del error si existe
+        throw new Error(`Error de red: ${errorText}`);
+      }
+  
+      // Procesar la respuesta
       const result = await response.json();
       console.log("Respuesta completa del servidor:", result);
-
+  
+      // Manejo en caso de éxito
       if (result.success) {
+        // Mensaje de bienvenida al usuario
         Swal.fire({
           icon: "success",
           title: "¡Bienvenido!",
@@ -47,60 +57,84 @@ function Login({ onLogin }) {
           timerProgressBar: true,
           showConfirmButton: false,
         });
-
+  
+        // Crear el objeto de usuario con todos los datos relevantes
         const userData = {
           username: result.username || "Usuario",
           token: result.token,
           admin: result.admin === true,
           idUser: result.idUser,
+          email: result.email,
+          profileImage: result.profileImage || "", // Imagen opcional
         };
-
-        // Pasamos toda la información a onLogin para que App.js se encargue de almacenarla en localStorage
+  
+        // Almacenar los datos en localStorage
+        localStorage.setItem("userData", JSON.stringify(userData));
+  
+        // Pasar los datos al controlador de sesión principal
         onLogin(userData);
-        
-        // Redirige al usuario dependiendo de si es admin o no
+  
+        // Redirigir al usuario dependiendo de su tipo
         navigate(result.admin ? "/admin" : "/", { replace: true });
       } else {
+        // Manejo de errores específicos enviados por el backend
         Swal.fire({
           icon: "error",
           title: "Error",
-          text: result.message,
+          text: result.message || "Credenciales incorrectas",
         });
       }
     } catch (error) {
+      // Manejo general de errores
+      console.error("Error al iniciar sesión:", error);
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: "Ocurrió un error al iniciar sesión",
+        text: error.message || "Ocurrió un error al iniciar sesión",
       });
     }
-  };
+  };  
 
   // Maneja el inicio de sesión con Google
   const handleGoogleSuccess = async (credentialResponse) => {
     const token = credentialResponse.credential;
-  
+
     try {
+      // Envía el token al backend para autenticar al usuario
       const response = await axios.post("http://localhost:8080/api_int_2024/users/google", { token });
-  
-      const jwtToken = response.data.token;
-      const username = response.data.username;
-      const idUser = response.data.idUser; // Asegúrate de obtener idUser en la respuesta
-  
-      // Verificar que tanto jwtToken como idUser estén disponibles
-      if (jwtToken && idUser) {
-        const userData = { username, token: jwtToken, idUser };
-  
-        // Pasamos userData a onLogin para que App.js lo gestione
-        onLogin(userData);
-  
-        Swal.fire("Bienvenido", `Bienvenido, ${username}`, "success");
-        navigate("/");
-      } else {
-        console.error("No se pudo obtener el token o idUser en la respuesta de Google");
-        Swal.fire("Error", "No se pudo obtener la información de usuario", "error");
+
+      // Extraer datos importantes de la respuesta
+      const { token: jwtToken, username, idUser, email, profileImage } = response.data;
+
+      // Verificar que los datos esenciales existan
+      if (!jwtToken || !idUser || !email) {
+        console.error("Faltan datos esenciales en la respuesta del servidor:", response.data);
+        Swal.fire("Error", "No se pudo obtener información completa del usuario", "error");
+        return;
       }
+
+      // Crear el objeto de usuario para almacenamiento local y lógica global
+      const userData = {
+        username: username || "Usuario",
+        email: email || "usuario@example.com",
+        profileImage: profileImage || "",
+        token: jwtToken,
+        idUser,
+      };
+
+      // Guardar en localStorage
+      localStorage.setItem("userData", JSON.stringify(userData));
+
+      // Pasar los datos al manejador de sesión principal
+      onLogin(userData);
+
+      // Mensaje de bienvenida
+      Swal.fire("Bienvenido", `Bienvenido, ${username}`, "success");
+
+      // Navegar a la ruta principal
+      navigate("/");
     } catch (error) {
+      console.error("Error al autenticar con Google:", error.response || error.message);
       Swal.fire("Error", "Error al iniciar sesión con Google", "error");
     }
   };

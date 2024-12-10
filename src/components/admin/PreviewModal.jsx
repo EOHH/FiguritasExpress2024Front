@@ -19,7 +19,7 @@ const PreviewModal = ({ order, onClose, onConfirm }) => {
         </div>
         <div className="preview-buttons">
           <button onClick={onClose}>Cancelar</button>
-          <button onClick={() => onConfirm(order)}>Confirmar</button>
+          <button onClick={() => onConfirm(order.idPedido)}>Confirmar</button>
         </div>
       </div>
     </div>

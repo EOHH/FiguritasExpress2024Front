@@ -74,7 +74,40 @@ function Carrito({ loggedInUserId }) {
       <div className="overlay-degradado">
         <div className="checkout-container">
           <div className={`cart-section ${mostrarRealizarPedido ? "shrink" : ""}`}>
-            <h2 className="cart-title">Carrito de compras</h2>
+            <h2 className="cart-title">
+              <span role="img" aria-label="cart">🛒</span> Carrito de compras
+            </h2>
+            <div className="cart-welcome">
+              <p>¡Bienvenido a tu carrito! Aquí podrás revisar los productos seleccionados y finalizar tu compra.</p>
+            </div>
+            <div className="cart-process">
+              <div className="process-step">
+                <img 
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyxS1Qy04WP6Woq5ZBsvwCH_ifzyLeCSVMThUqQEg7qAXkvsQ7_5f23MQpZfvfaw3NNlQ&usqp=CAU" 
+                  alt="Seleccionar productos" 
+                  className="process-image" 
+                />
+                <p>1. Selecciona tus productos favoritos</p>
+              </div>
+              
+              <div className="process-step">
+                <img 
+                  src="https://academia.nubimetrics.com/hubfs/C%C3%B3mo%20elegir%20los%20mejores%20productos%20para%20vender%20en%20Mercado%20Libre.png" 
+                  alt="Revisar carrito" 
+                  className="process-image" 
+                />
+                <p>2. Revisa tu carrito cuidadosamente</p>
+              </div>
+              
+              <div className="process-step">
+                <img 
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9sGhAdUks6ILT3I6_Utt1qQR2ikrTWn8_pDIgQAYftMvAcfnWB2HvcM9PI93Peevw3_M&usqp=CAU" 
+                  alt="Realizar pago" 
+                  className="process-image" 
+                />
+                <p>3. Realiza tu pago de manera segura</p>
+              </div>
+            </div>
             <table className="cart-table">
               <thead>
                 <tr>
@@ -106,7 +139,7 @@ function Carrito({ loggedInUserId }) {
                         onChange={(e) => actualizarCantidad(parseInt(e.target.value), index)}
                       />
                     </td>
-                    <td>${(item.precio * item.cantidad).toFixed(2)}</td>
+                    <td>S/{(item.precio * item.cantidad).toFixed(2)}</td>
                     <td>
                       <button className="remove-item" onClick={() => eliminarItem(item)}>
                         <i className="fas fa-trash"></i>
@@ -117,7 +150,7 @@ function Carrito({ loggedInUserId }) {
               </tbody>
             </table>
             <div className="cart-total">
-              <h3>Total: ${total.toFixed(2)}</h3>
+              <h4>Total: S/{total.toFixed(2)}</h4>
             </div>
             <div className="payment-methods">
               <button className="btn-proceed recolor" onClick={() => handleMetodoPago("tarjeta")}>
