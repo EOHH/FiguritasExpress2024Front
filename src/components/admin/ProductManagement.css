@@ -127,6 +127,29 @@
     font-size: 18px; /* Asegúrate de que el tamaño de los iconos sea adecuado */
 }
 
+/* Estilos para el estado del inventario */
+.inventory-status {
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.in-stock {
+    color: green;
+    background-color: #e9f7e9;
+}
+
+.low-stock {
+    color: orange;
+    background-color: #fff4e5;
+}
+
+.out-of-stock {
+    color: red;
+    background-color: #fdecea;
+}
+
 /* Estilos para el modal de edición */
 .modal-overlay {
     position: fixed;

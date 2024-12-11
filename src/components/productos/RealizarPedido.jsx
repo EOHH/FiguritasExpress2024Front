@@ -11,6 +11,7 @@ function RealizarPedido({ itemsCarrito, total, onPedidoRealizado, usuarioId, met
     const [fechaExpiracion, setFechaExpiracion] = useState("");
     const [cvv, setCvv] = useState("");
     const [numeroYape, setNumeroYape] = useState("");
+    const [codigoVerificacion, setCodigoVerificacion] = useState("");
     const [costoEnvio, setCostoEnvio] = useState(0);
     const [totalConEnvio, setTotalConEnvio] = useState(total);
 
@@ -116,7 +117,7 @@ function RealizarPedido({ itemsCarrito, total, onPedidoRealizado, usuarioId, met
     }, [direccion, total]);
 
     const manejarPedido = async () => {
-        if (!nombreCliente || !direccion || (metodoPago === "tarjeta" && (!numeroTarjeta || !fechaExpiracion || !cvv)) || (metodoPago === "yape" && !numeroYape)) {
+        if (!nombreCliente || !direccion || (metodoPago === "tarjeta" && (!numeroTarjeta || !fechaExpiracion || !cvv)) || (metodoPago === "yape" && (!numeroYape || !codigoVerificacion))) {
             Swal.fire({
                 icon: "warning",
                 title: "Campos Incompletos",
@@ -291,6 +292,17 @@ function RealizarPedido({ itemsCarrito, total, onPedidoRealizado, usuarioId, met
                                         onChange={(e) => setNumeroYape(e.target.value)}
                                         className="payment-input"
                                         maxLength="11"
+                                    />
+                                </div>
+                                <div className="input-with-icon">
+                                    <i className="fas fa-key"></i> {/* Aquí puedes elegir el icono que prefieras */}
+                                    <input
+                                        type="text"
+                                        value={codigoVerificacion}
+                                        onChange={(e) => setCodigoVerificacion(e.target.value)}
+                                        placeholder="Ingresa el código de verificación"
+                                        maxLength="6"
+                                        className="payment-input"
                                     />
                                 </div>
                                 <div className="input-with-icon">
